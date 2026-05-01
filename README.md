@@ -79,6 +79,8 @@ config: {skin: 'narrow'}}
 This extension is an experimental **VibeCoding** project. Developed using the **DeepSeek V4** model, the entire project was completed at a cost of **less than 2 RMB** — with almost zero human intervention throughout the entire process. The author has no knowledge of JavaScript syntax whatsoever.
 
 > 本项目是一次 **VibeCoding** 的实验性尝试。全程使用 **DeepSeek V4** 模型开发，总花费不足 **2 元人民币**，几乎零人工干预。作者本人完全不懂 JavaScript 语法。
+>
+> 完整的实验记录与提示词序列详见 [EXPERIMENT_LOG.md](./EXPERIMENT_LOG.md)。
 
 ## License
 
