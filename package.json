@@ -1,0 +1,83 @@
+{
+  "name": "wavedrom-markdown-preview",
+  "version": "0.1.0",
+  "displayName": "Markdown Preview Wavedrom Support",
+  "description": "Adds Wavedrom timing diagram and register field support to VS Code's builtin markdown preview",
+  "icon": "icon.png",
+  "publisher": "ImgAxis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyrtster/wavedrom-markdown-preview"
+  },
+  "homepage": "https://github.com/hyrtster/wavedrom-markdown-preview",
+  "bugs": {
+    "url": "https://github.com/hyrtster/wavedrom-markdown-preview/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./dist/extension.js",
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "markdown.previewScripts": [
+      "./dist-preview/index.bundle.js"
+    ],
+    "markdown.markdownItPlugins": true,
+    "configuration": {
+      "title": "Markdown Preview Wavedrom Support",
+      "properties": {
+        "wavedrom-markdown.darkSkin": {
+          "type": "string",
+          "enum": [
+            "dark",
+            "default",
+            "lowkey",
+            "narrow",
+            "narrower",
+            "narrowerer"
+          ],
+          "default": "dark",
+          "description": "Wavedrom skin for dark color themes."
+        },
+        "wavedrom-markdown.lightSkin": {
+          "type": "string",
+          "enum": [
+            "default",
+            "narrow",
+            "lowkey",
+            "narrower",
+            "narrowerer"
+          ],
+          "default": "default",
+          "description": "Wavedrom skin for light color themes."
+        }
+      }
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.0",
+    "@types/vscode": "^1.85.0",
+    "terser-webpack-plugin": "^5.3.9",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "json5": "^2.2.3",
+    "wavedrom": "^3.6.1"
+  },
+  "scripts": {
+    "build-ext": "webpack --mode production --config ./build/extension.webpack.config.js",
+    "build-preview": "webpack --mode production --config ./build/preview.webpack.config.js",
+    "build": "npm run build-ext && npm run build-preview",
+    "vscode:prepublish": "npm run build",
+    "package": "vsce package"
+  }
+}

@@ -1,0 +1,13 @@
+node_modules
+.vscode
+.git
+.gitignore
+.github
+*.vsix
+src
+tsconfig.json
+build
+test
+out
+*.map
+icon-preview.svg
